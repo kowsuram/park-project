@@ -4,3 +4,11 @@ server:
 spring:
   application:
     name: park-config-server
+  cloud:
+    config:
+      server:
+        git:
+          clone-on-start: true
+          default-label: main
+          username: kowsuram
+          password: Chromium72119$
