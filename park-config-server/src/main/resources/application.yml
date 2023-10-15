@@ -10,5 +10,5 @@ spring:
         git:
           clone-on-start: true
           default-label: main
-          username: kowsuram
-          password: Chromium72119$
+          username: xxxxxx
+          password: xxxxxx
