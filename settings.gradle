@@ -1,0 +1,9 @@
+rootProject.name = 'park-project'
+
+include 'eureka-server'
+include 'facilities-service'
+include 'park-config-server'
+include 'park-gateway'
+include 'ticket-booking-service'
+include 'ticket-validation-service'
+include 'tracking-service'

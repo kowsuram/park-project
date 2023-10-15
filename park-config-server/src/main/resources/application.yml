@@ -1,0 +1,6 @@
+server:
+  port: 8672
+
+spring:
+  application:
+    name: park-config-server

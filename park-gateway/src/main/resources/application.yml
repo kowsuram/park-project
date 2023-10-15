@@ -1,0 +1,40 @@
+server:
+  port: 8089
+
+spring:
+  application:
+    name: park-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: add_request_header_route
+        uri: lb://facilities-service
+        predicates:
+        - Path=/status/health/check
+        - Method=GET
+        filters:
+        - AddRequestHeader=X-Request-Foo, Request__________HEADER
+        - AddResponseHeader=X-Response-Foo, Response________HEADER
+#        - RewritePath=/fs/(?<segment>.*), /status/$\{segment}
+#      - id: tbs-status-check
+#        uri: lb://tbs 
+#        predicates:
+#        - Path=/tbs/status/**
+#      - id: ticket-validation-service
+#        uri: lb://tvs
+#        predicates:
+#        - Path=/tvs/status/**
+#      - id: tracking-service
+#        uri: lb://ts 
+#        predicates:
+#        - Path=/ts/status/**
+        
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+ 
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
