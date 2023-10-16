@@ -2,6 +2,10 @@ server:
   port: 8672
 
 spring:
+  security:
+    user:
+      name: root
+      password: root
   application:
     name: park-config-server
   cloud:
@@ -10,5 +14,11 @@ spring:
         git:
           clone-on-start: true
           default-label: main
-          username: kowsuram
-          password: Chromium72119$
+          username: xxxxx
+          password: xxxxx
+          uri: git@github.com:kowsuram/park-config.git
+          
+management:
+  endpoint:
+    refresh:
+      enabled: true  

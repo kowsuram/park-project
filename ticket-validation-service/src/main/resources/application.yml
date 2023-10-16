@@ -1,13 +1,24 @@
-
 server:
   port: 0
 
 eureka:
   client:
     service-url:
-      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+      defaultZone: ${EUREKA_URI:http://root:root@localhost:8761/eureka}
   instance:
     hostname: localhost
 spring:
   application:
     name: ticket-validation-service
+  config:
+    import:
+    - optional:configserver:http://root:root@localhost:8672/park-config-server/master/application.yml
+
+custom:
+  key: keyValue
+  
+management:
+  endpoint:
+    refresh:
+      enabled: true  
+
