@@ -21,4 +21,4 @@ spring:
 management:
   endpoint:
     refresh:
-      enabled: true  
+      enabled: true
